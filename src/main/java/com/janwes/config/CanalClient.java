@@ -82,6 +82,11 @@ public class CanalClient implements ApplicationRunner {
         }
     }
 
+    /**
+     * 解析数据
+     *
+     * @param entries
+     */
     private void dataHandle(List<CanalEntry.Entry> entries) {
         for (CanalEntry.Entry entry : entries) {
             // 开启/关闭事务的实体类跳过
@@ -125,6 +130,11 @@ public class CanalClient implements ApplicationRunner {
         }
     }
 
+    /**
+     * sql执行语句收集
+     *
+     * @param columns
+     */
     private void collectLog(List<CanalEntry.Column> columns) {
         for (CanalEntry.Column column : columns) {
             log.info("===> columnName:{},columnValue:{},update:{}", column.getName(), column.getValue(), column.getUpdated());
