@@ -1,4 +1,4 @@
-# springboot集成Alibaba canal量订阅&消费组件
+# springboot集成Alibaba canal增量订阅&消费组件
 ## 下载与安装（Windows）
 
 - 下载地址：https://github.com/alibaba/canal/releases
