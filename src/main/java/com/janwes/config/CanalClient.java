@@ -1,4 +1,4 @@
-package com.janwes.canal.config;
+package com.janwes.config;
 
 import com.alibaba.otter.canal.client.CanalConnector;
 import com.alibaba.otter.canal.client.CanalConnectors;
@@ -15,12 +15,11 @@ import java.net.InetSocketAddress;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedDeque;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author Janwes
  * @version 1.0
- * @package com.janwes.canal.config
+ * @package com.janwes.config
  * @date 2021/9/13 15:44
  * @description
  */

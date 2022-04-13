@@ -10,7 +10,41 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/test_data?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=&serverTimezone=Asia/Shanghai
     username: root
-    password: root
+    password: fMiheeCLOHV1+2z962YFZQ==
+    druid:
+      # 初始化时建立物理连接的个数
+      initial-size: 10
+      # 最大连接池数量
+      max-active: 20
+      # 最小连接池数量
+      min-idle: 8
+      # 获取连接时最大等待时间，单位毫秒。配置了maxWait之后，缺省启用公平锁，并发效率会有所下降，如果需要可以通过配置useUnfairLock属性为true使用非公平锁
+      max-wait: 60000
+      transaction-query-timeout: 30
+      query-timeout: 30
+      stat-view-servlet:
+        # 是否开启 StatViewServlet
+        enabled: true
+        # http://ip:port/context-path/druid/index.html
+        url-pattern: /druid/*
+        # 访问监控页面 白名单，默认127.0.0.1
+        allow: 127.0.0.1
+        # 访问监控页面 黑名单
+        deny: 192.168.10.1
+        # 访问监控页面 登陆账号
+        login-username: admin
+        # 访问监控页面 登陆密码
+        login-password: admin
+      # WebStatFilter配置，说明请参考Druid Wiki，配置_配置WebStatFilter
+      # 是否启用StatFilter默认值false
+      web-stat-filter:
+        enabled: true
+        url-pattern: "/*"
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+        # session统计
+        session-stat-enable: true
+        # 最大session数量
+        session-stat-max-count: 100000
 mybatis-plus:
   # 设置Mapper接口所对应的XML文件位置，如果你在Mapper接口中有自定义方法，需要进行该配置
   mapper-locations: classpath*:/mapper/*/*.xml
