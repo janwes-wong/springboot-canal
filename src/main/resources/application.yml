@@ -1,0 +1,19 @@
+# 服务端口号
+server:
+  port: 4480
+spring:
+  application:
+    # 服务应用名
+    name: canal-client
+  # mysql数据源配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test_data?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+mybatis-plus:
+  # 设置Mapper接口所对应的XML文件位置，如果你在Mapper接口中有自定义方法，需要进行该配置
+  mapper-locations: classpath*:/mapper/*/*.xml
+  configuration:
+    # 配置控制台打印带参数sql执行语句
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
