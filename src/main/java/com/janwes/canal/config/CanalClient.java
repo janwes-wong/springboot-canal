@@ -12,10 +12,10 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.net.InetSocketAddress;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author Janwes
@@ -96,7 +96,7 @@ public class CanalClient implements ApplicationRunner {
                 rowChange = CanalEntry.RowChange.parseFrom(entry.getStoreValue());
                 // 获取数据的操作类型 update/insert/delete
                 CanalEntry.EventType eventType = rowChange.getEventType();
-                log.info("===> " + String.format("binlog[%s:%s] , name[%s,%s] , eventType : %s",
+                log.info("===> " + String.format("binlog[%s:%s] , schemaName[%s] , tableName[%s] , eventType : %s",
                         entry.getHeader().getLogfileName(), entry.getHeader().getLogfileOffset(),
                         entry.getHeader().getSchemaName(), entry.getHeader().getTableName(),
                         eventType));
